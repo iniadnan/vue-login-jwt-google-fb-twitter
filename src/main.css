@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  body {
+    font-family: "Inter", sans-serif;
+    background-color: #f9fbfc;
+  }
+  a,
+  button {
+    cursor: pointer;
+    transition: 0.125s ease-in;
+  }
+
+  input,
+  select {
+    outline: none;
+  }
+
+  .container-ix8 {
+    max-width: 1240px;
+    width: 100%;
+    margin: 0px auto;
+    position: relative;
+  }
+  @media (min-width: 1536px) {
+    .container-ix8 {
+      max-width: 1440px;
+      width: 100%;
+    }
+  }
+}
