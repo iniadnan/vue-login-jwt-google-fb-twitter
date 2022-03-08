@@ -1,10 +1,11 @@
 <template>
   <div>
-    <main class="py-20">
+    <Nav />
+    <main class="py-10 sm:py-14 md:py-20">
       <div class="container-ix8">
         <router-link
-          to="/"
-          class="w-400px block mx-auto bg-gray-100 py-3 md:py-4 px-5 md:px-6 rounded"
+          :to="{ name: 'detail', params: { slug: article.slug } }"
+          class="w-full sm:w-400px md:w-400px block mx-auto bg-gray-100 py-3 md:py-4 px-5 md:px-6 rounded"
           v-for="article in articles"
           :key="article.id"
         >
@@ -52,18 +53,20 @@
 
 <script>
 import { mapState, mapActions } from "vuex";
+import Nav from "@/components/Nav.vue";
 import Footer from "@/components/Footer.vue";
 export default {
   name: "HomeView",
   components: {
+    Nav,
     Footer,
   },
   created() {
-    this.getArticles();
+    this.getAllArticle();
   },
   methods: {
     ...mapActions({
-      getArticles: "article/getAllArticle",
+      getAllArticle: "article/getAllArticle",
     }),
   },
   computed: {

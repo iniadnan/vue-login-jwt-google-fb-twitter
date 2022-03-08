@@ -5,4 +5,8 @@ export default {
   getAllArticle() {
     return apiClient.get("article/");
   },
+  // GET SINGLE ARTICLE
+  getSingleArticle(slug) {
+    return apiClient.get("article/" + slug);
+  },
 };
